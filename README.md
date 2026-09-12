@@ -55,6 +55,8 @@ hermes skills tap add abehmiel/informed-patient
 hermes skills install informed-patient --category health
 ```
 
+Do not install this skill from a raw file URL. The Hermes URL source fetches only the single `SKILL.md` it points at, so the five files in `references/` would be missing and the skill would break when it tries to read them. Use one of the two forms above, which download the whole skill directory.
+
 The Hermes guard scan reports one medium `fake_policy` match in `references/red-flags.md`. It is a false positive on example text about clinical guidelines; the overall verdict is `safe` and the install is allowed.
 
 ### Claude Desktop & Claude Web (ZIP Upload)

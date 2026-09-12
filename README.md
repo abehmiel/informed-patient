@@ -25,7 +25,7 @@ This repository is structured as a [Claude Code plugin](https://code.claude.com/
 1. Add the marketplace:
 
 ```
-/plugin marketplace add https://github.com/DrCatHicks/informed-patient.git
+/plugin marketplace add https://github.com/abehmiel/informed-patient.git
 ```
 
 2. Install the plugin:
@@ -37,6 +37,25 @@ This repository is structured as a [Claude Code plugin](https://code.claude.com/
 3. Restart Claude Code to activate.
 
 For more on Claude Code plugins, see [the plugin documentation](https://code.claude.com/docs/en/plugins).
+
+### Hermes Agent (`hermes skills install`)
+
+This fork keeps the skill at `skills/informed-patient/`, the layout the Hermes skills hub looks for.
+
+Install by full identifier:
+
+```
+hermes skills install abehmiel/informed-patient/skills/informed-patient --category health
+```
+
+Or add the repo as a tap once, then install by short name:
+
+```
+hermes skills tap add abehmiel/informed-patient
+hermes skills install informed-patient --category health
+```
+
+The Hermes guard scan reports one medium `fake_policy` match in `references/red-flags.md`. It is a false positive on example text about clinical guidelines; the overall verdict is `safe` and the install is allowed.
 
 ### Claude Desktop & Claude Web (ZIP Upload)
 
@@ -186,12 +205,12 @@ Specific limitations to be aware of:
 
 | File                                                                              | Purpose                                                       |
 | ---------------------------------------------------------------------------------- | ------------------------------------------------------------- |
-| `informed-patient/skills/informed-patient/SKILL.md`                               | The skill itself                                              |
-| `informed-patient/skills/informed-patient/references/evidence-hierarchy.md`       | How to explain study types in plain language                  |
-| `informed-patient/skills/informed-patient/references/red-flags.md`                | The 10 epistemic red flags                                    |
-| `informed-patient/skills/informed-patient/references/symptom-inventory-methodology.md` | Measurement science grounding for Phase 1 symptom elicitation |
-| `informed-patient/skills/informed-patient/references/literature-search-strategy.md`   | Source hierarchy query templates and source-warning conditions for Phase 2 |
-| `informed-patient/skills/informed-patient/references/output-template.md`          | The exact Health Evidence Review document template            |
+| `skills/informed-patient/SKILL.md`                               | The skill itself                                              |
+| `skills/informed-patient/references/evidence-hierarchy.md`       | How to explain study types in plain language                  |
+| `skills/informed-patient/references/red-flags.md`                | The 10 epistemic red flags                                    |
+| `skills/informed-patient/references/symptom-inventory-methodology.md` | Measurement science grounding for Phase 1 symptom elicitation |
+| `skills/informed-patient/references/literature-search-strategy.md`   | Source hierarchy query templates and source-warning conditions for Phase 2 |
+| `skills/informed-patient/references/output-template.md`          | The exact Health Evidence Review document template            |
 | `EVALUATION.md`                                                                   | Test scenarios and pass criteria for verifying skill behavior |
 | `LICENSE.txt`                                                                     | CC-BY-4.0 license                                             |
 

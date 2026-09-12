@@ -17,7 +17,7 @@ jobs:
       - name: Create package structure
         run: |
           mkdir -p package
-          cp -r informed-patient/skills/informed-patient/. package/
+          cp -r skills/informed-patient/. package/
 
       - name: Create zip archive
         run: |
